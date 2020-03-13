@@ -54,9 +54,19 @@ app.use(session({
 
 app.use(flash())
 
+app.use('/daily_task', daily_task)
+app.use('/emergency_contact', emergency_contact)
+app.use('/food', food)
 app.use('/', index)
-app.use('/users', users)
+app.use('/medical_condition', medical_condition)
+app.use('/nutrient_chart', nutrient_chart)
 app.use('/patient', patient)
+app.use('/pescribed_drug', prescribed_drug)
+app.use('/room', room)
+app.use('/suffers', suffers)
+app.use('/therapy', therapy)
+app.use('/users', users)
+app.use('/vital', vital)
 
 app.listen(3000, function(){
  console.log("Server port: 3000")
