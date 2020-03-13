@@ -1,0 +1,33 @@
+<%- include ../layouts/header.ejs %>
+
+<% if (messages.error) { %>
+ <p style="color:red"><%- messages.error %></p>
+<% } %>
+
+<% if (messages.success) { %>
+ <p style="color:green"><%- messages.success %></p>
+<% } %>
+
+<table>
+ <tr>
+  <th>Vital ID</th>
+  <th>Blood Pressure</th>  
+  <th>Heart Rate</th>
+  <th>Temperature</th>  
+  <th>Vital Weight</th> 
+ </tr> 
+
+ <% if (data) { %>
+ <% data.forEach(function(user){ %>
+  <tr>
+   <td><%= user.Vital_id %></td>
+   <td><%= user.Blood_pressure %></td>
+   <td><%= user.Heart_rate %></td>
+   <td><%= user.Temperature %></td>
+   <td><%= user.Vital_weight %></td>
+  </tr>
+ <% }) %>
+ <% } %>
+</table>
+
+<%- include ../layouts/footer.ejs %>

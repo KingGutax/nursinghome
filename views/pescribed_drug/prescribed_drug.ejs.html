@@ -1,0 +1,33 @@
+<%- include ../layouts/header.ejs %>
+
+<% if (messages.error) { %>
+ <p style="color:red"><%- messages.error %></p>
+<% } %>
+
+<% if (messages.success) { %>
+ <p style="color:green"><%- messages.success %></p>
+<% } %>
+
+<table>
+ <tr>
+  <th>Prescription ID</th>
+  <th>Authorization</th>
+  <th>Quantity</th>
+  <th>Drug Name</th> 
+  <th>Employee ID</th>   
+ </tr> 
+
+ <% if (data) { %>
+ <% data.forEach(function(user){ %>
+  <tr>
+   <td><%= user.Prescription_id %></td>
+   <td><%= user.Authorization %></td>
+   <td><%= user.Quantity %></td>
+   <td><%= user.Drug_name %></td>
+   <td><%= user.Pd_employee_id %></td>
+  </tr>
+ <% }) %>
+ <% } %>
+</table>
+
+<%- include ../layouts/footer.ejs %>

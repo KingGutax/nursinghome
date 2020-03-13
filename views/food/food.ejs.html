@@ -1,0 +1,35 @@
+<%- include ../layouts/header.ejs %>
+
+<% if (messages.error) { %>
+ <p style="color:red"><%- messages.error %></p>
+<% } %>
+
+<% if (messages.success) { %>
+ <p style="color:green"><%- messages.success %></p>
+<% } %>
+
+<table>
+ <tr>
+  <th>Item No</th>
+  <th>Patient ID</th>
+  <th>Employee ID</th>
+  <th>Reqd Kcal</th>  
+  <th>Lq Thickness</th>  
+  <th>Nutrionist</th>  
+ </tr> 
+
+ <% if (data) { %>
+ <% data.forEach(function(user){ %>
+  <tr>
+   <td><%= user.Item_no %></td>
+   <td><%= user.F_patient_id %></td>
+   <td><%= user.F_employee_id %></td>
+   <td><%= user.Reqd_kcal %></td>
+   <td><%= user.Lq_thickness %></td>
+   <td><%= user.Nutrionist %></td>
+  </tr>
+ <% }) %>
+ <% } %>
+</table>
+
+<%- include ../layouts/footer.ejs %>

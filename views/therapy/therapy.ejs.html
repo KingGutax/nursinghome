@@ -1,0 +1,35 @@
+<%- include ../layouts/header.ejs %>
+
+<% if (messages.error) { %>
+ <p style="color:red"><%- messages.error %></p>
+<% } %>
+
+<% if (messages.success) { %>
+ <p style="color:green"><%- messages.success %></p>
+<% } %>
+
+<table>
+ <tr>
+  <th>Therapist</th>
+  <th>Patient ID</th>  
+  <th>Next Session</th>
+  <th>Last Session</th>  
+  <th>Therapy Type</th>
+  <th>Employee ID</th>  
+ </tr> 
+
+ <% if (data) { %>
+ <% data.forEach(function(user){ %>
+  <tr>
+   <td><%= user.Therapist %></td>
+   <td><%= user.Th_patient_id %></td>
+   <td><%= user.Next_session %></td>
+   <td><%= user.Last_session %></td>
+   <td><%= user.Therapy_type %></td>
+   <td><%= user.Th_employee_id %></td>
+  </tr>
+ <% }) %>
+ <% } %>
+</table>
+
+<%- include ../layouts/footer.ejs %>
