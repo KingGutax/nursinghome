@@ -3,16 +3,16 @@ var app = express()
 
 app.get('/', function(req, res, next){
  req.getConnection(function(error, conn){
-  conn.query("SELECT * FROM pescribed_drug", function(err, rows, fields) {
+  conn.query("SELECT * FROM daily_task", function(err, rows, fields) {
    if(err){
     req.flash('error', err)
-    res.render('pescribed_drug/list', {
-     title: 'Presribed Drug List',
+    res.render('daily_task/list', {
+     title: 'Daily Task List',
      data: ''
     })
    }else{
-    res.render('prescribed_drug/list', {
-     title: 'Prescribed Drug List',
+    res.render('daily_task/list', {
+     title: 'Daily Task List',
      data: rows
     })
    }   
